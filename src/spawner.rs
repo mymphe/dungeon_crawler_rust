@@ -9,8 +9,8 @@ pub fn spawn_player(ecs: &mut World, pos: Point) {
             glyph: to_cp437('@'),
         },
         Health {
-            current: 10,
-            max: 10,
+            current: 100,
+            max: 100,
         },
     ));
 }
@@ -47,10 +47,13 @@ fn orc() -> (i32, String, FontCharType) {
 
 pub fn spawn_amulet_of_yala(ecs: &mut World, pos: Point) {
     ecs.push((
-        Item, AmuletOfYala, pos, Render{
+        Item,
+        AmuletOfYala,
+        pos,
+        Render {
             color: ColorPair::new(WHITE, BLACK),
-            glyph: to_cp437('|')
+            glyph: to_cp437('|'),
         },
-        Name("Amulet of Yala".to_string())
+        Name("Amulet of Yala".to_string()),
     ));
 }
